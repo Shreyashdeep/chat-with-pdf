@@ -60,7 +60,7 @@ export function Chat() {
                 ))}
             </div>
             <form className="p-4 flex clear-both">
-                <Input placeholder="Type to chat with AI..." className="mr-2"/>
+                <Input placeholder={"Type to chat with AI..."} className="mr-2"/>
                 <Button type="submit" className="w-24">
                     Ask
 
