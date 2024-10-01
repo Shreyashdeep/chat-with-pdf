@@ -3,7 +3,7 @@ import { Card, CardContent,CardFooter,CardDescription, CardHeader, CardTitle } f
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import {Message} from "ai"
 import ReactMarkdown from "react-markdown"
-import { formattedSourceText } from "@/lib/utils";
+import { formattedText } from "@/lib/utils";
 
 const wrappedText = (text: string) => 
     text.split('\n').map((line, i) => (
@@ -57,7 +57,7 @@ export function ChatBubble({
     a: ({node, ...props}) => <a target="_blank" rel="noopener noreferrer" {...props} />
   }}
 >
-                            {formattedSourceText(source)}
+                            {formattedText(source)}
                           </ReactMarkdown>
                         </AccordionContent>
                       </AccordionItem>
