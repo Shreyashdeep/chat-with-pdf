@@ -1,13 +1,14 @@
 import { Pinecone } from "@pinecone-database/pinecone";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import {env} from "./config";
-const { PineconeStore } = require("langchain/vectorstores/pinecone");
-
+// const { PineconeStore } = require("langchain/vectorstores/pinecone");
+import { PineconeStore } from "@langchain/pinecone";
 
 interface CustomDoc {
-    content: Record<string, any>;
+    pageContent: string;
+    metadata: Record<string, any>;
   }
-  
+
 export async function embedAndStoreDocs(
     client: Pinecone,
     docs: CustomDoc[],
@@ -17,7 +18,6 @@ export async function embedAndStoreDocs(
         const index = client.Index(env.PINECONE_INDEX_NAME);
         await PineconeStore.fromDocuments(docs, embeddings, {
             pineconeIndex: index,
-            namespace: env.PINECONE_NAME_SPACE,
             textKey: "text",
         });
 

@@ -1,6 +1,8 @@
 
 import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
-const { RecursiveCharacterTextSplitter } = require("langchain/text_splitter");
+// const { RecursiveCharacterTextSplitter } = require("langchain/text_splitter");
+import { RecursiveCharacterTextSplitter } from "langchain/text_splitter"; // Updated to ES6 import
+
 import {env} from "./config";
 
 
